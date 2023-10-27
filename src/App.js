@@ -75,7 +75,7 @@ function App() {
   return (
     <div className="App">
       <h3 style={{width: '70vw', margin: 'auto'}}>To use this app you must allow it to access your GeoLocation. Please click on the button below and then click on allow as shown in the image below.</h3>
-      <img src={location} />
+      <img class="logo" src={location} />
       <br/>
       <button onClick={getLocation}>Get Location</button>
       <h1>Coordinates</h1>
@@ -84,8 +84,8 @@ function App() {
         <div>
           {lat && <p>Your current Latitude is: {lat}</p>}
           <p>Please tilt your device until the orientation shown below is the same value as your latitude shown above.</p>
-          <h1>Current device orientation: {orientation}</h1>
-          <h1 style={{width: '70vw', margin: 'auto'}}>{progress}</h1>
+          <h3>Current device orientation: {orientation}</h3>
+          <h3 style={{width: '70vw', margin: 'auto'}}>{progress}</h3>
           {/* <p>Alpha: {orientation[0]}</p> */}
           {/* <p>Beta: {orientation[1]}</p> */}
           {/* <p>Gamma: {orientation[2]}</p> */}
