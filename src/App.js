@@ -25,7 +25,7 @@ function App() {
 
   const handleOrientation = event => {
     const alpha = event.alpha;
-    const beta = event.beta;
+    const beta = Number(event.beta).toFixed(2);
     const gamma = event.gamma;
     setOrientation(beta);
     setProgress("Keep tilting...");
@@ -34,28 +34,6 @@ function App() {
   window.addEventListener('deviceorientation', handleOrientation);
 
   const getLocation = () => {
-    /* navigator.permissions.query({ name: 'geolocation' }).then(function(result) {
-      console.log("result: ", result.state);
-      if(result.state == 'granted') {
-        if(!navigator.geolocation) {
-          setStatus("Geolocation is not supported by your browser");
-        } else {
-          setStatus("Locating...");
-          navigator.geolocation.getCurrentPosition((position) => {
-            setStatus(null);
-            setLat(position.coords.latitude);
-            setLong(position.coords.longitude);
-            setShowOrnt(true);
-          }, failure => {
-            if (failure.message.startsWith("Only secure origins are allowed")) {
-              setStatus("HTTPS error with getGeoLocation!");
-            } else setStatus("Unable to retrieve your location");
-          });
-        }
-      } else {
-        alert("Permission not granted!");
-      }
-    }); */
     if(!navigator.geolocation) {
       setStatus("Geolocation is not supported by your browser");
     } else {
