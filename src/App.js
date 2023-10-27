@@ -13,9 +13,9 @@ function App() {
 
   useEffect(() => {
     let delta = orientation - lat;
-    console.log('orientation', orientation);
+    /* console.log('orientation', orientation);
     console.log('lat: ', lat);
-    console.log('delta: ', delta);
+    console.log('delta: ', delta); */
     if(delta < 1 && delta > -1) {
       setProgress("Done! Now place the Mesh PlusPlus device with its solar panel at the same angle as your current device!");
     } else if(delta < 5 && delta > -5) {
@@ -34,6 +34,28 @@ function App() {
   window.addEventListener('deviceorientation', handleOrientation);
 
   const getLocation = () => {
+    /* navigator.permissions.query({ name: 'geolocation' }).then(function(result) {
+      console.log("result: ", result.state);
+      if(result.state == 'granted') {
+        if(!navigator.geolocation) {
+          setStatus("Geolocation is not supported by your browser");
+        } else {
+          setStatus("Locating...");
+          navigator.geolocation.getCurrentPosition((position) => {
+            setStatus(null);
+            setLat(position.coords.latitude);
+            setLong(position.coords.longitude);
+            setShowOrnt(true);
+          }, failure => {
+            if (failure.message.startsWith("Only secure origins are allowed")) {
+              setStatus("HTTPS error with getGeoLocation!");
+            } else setStatus("Unable to retrieve your location");
+          });
+        }
+      } else {
+        alert("Permission not granted!");
+      }
+    }); */
     if(!navigator.geolocation) {
       setStatus("Geolocation is not supported by your browser");
     } else {
@@ -43,8 +65,10 @@ function App() {
         setLat(position.coords.latitude);
         setLong(position.coords.longitude);
         setShowOrnt(true);
-      }, () => {
-        setStatus("Unable to retrieve your location");
+      }, failure => {
+        if (failure.message.startsWith("Only secure origins are allowed")) {
+          setStatus("HTTPS error with getGeoLocation!");
+        } else setStatus("Unable to retrieve your location");
       });
     }
   }
