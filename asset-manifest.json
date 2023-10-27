@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/meshplusplus/static/css/main.073c9b0a.css",
-    "main.js": "/meshplusplus/static/js/main.25165c3e.js",
+    "main.js": "/meshplusplus/static/js/main.ea655a26.js",
     "static/js/787.fb3a8f92.chunk.js": "/meshplusplus/static/js/787.fb3a8f92.chunk.js",
     "static/media/allowGeoLocation.png": "/meshplusplus/static/media/allowGeoLocation.9cadbfb6e61a0942f0c0.png",
     "static/media/logo.svg": "/meshplusplus/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/meshplusplus/index.html",
     "main.073c9b0a.css.map": "/meshplusplus/static/css/main.073c9b0a.css.map",
-    "main.25165c3e.js.map": "/meshplusplus/static/js/main.25165c3e.js.map",
+    "main.ea655a26.js.map": "/meshplusplus/static/js/main.ea655a26.js.map",
     "787.fb3a8f92.chunk.js.map": "/meshplusplus/static/js/787.fb3a8f92.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.25165c3e.js"
+    "static/js/main.ea655a26.js"
   ]
 }
